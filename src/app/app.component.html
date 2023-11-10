@@ -1,0 +1,515 @@
+<div class="layout" [dir]="'dir' | translate">
+  <!-- start header -->
+  <div class="header">
+    <nav class="navbar navbar-expand-lg py-0 fixed-top">
+      <div class="container">
+        <a class="navbar-brand m-0" href="#"
+          ><img src="../assets/images/logo/logo.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmain"
+          aria-controls="navmain"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navmain">
+          <ul class="navbar-nav m-auto links">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">{{
+                "links.home" | translate
+              }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="toWhoAre()" routerLink="/whoAre">{{
+                "links.whoAreWe" | translate
+              }}</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                (click)="toMessage()"
+                routerLink="/ourMessage"
+                >{{ "links.ourMessage" | translate }}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                (click)="toservices()"
+                routerLink="/ourservices"
+                >{{ "links.services" | translate }}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                (click)="tosuccessPartners()"
+                routerLink="/oursuccessPartners"
+                >{{ "links.successPartners" | translate }}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="toContact()" routerLink="/contact">{{
+                "links.contactUs" | translate
+              }}</a>
+            </li>
+          </ul>
+          <div class="position-relative select-lang my-3 mx-auto m-lg-0">
+            <i class="fa-solid fa-language position-absolute"></i>
+            <select name="" id="" (change)="translate($event)">
+              <option value="ar">
+                <i class="fa-solid fa-language"></i>
+                العربية
+              </option>
+              <option value="en">
+                <i class="fa-solid fa-language"></i>
+                English
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- end header -->
+  <!-- start who are us -->
+
+  <div class="whoAre d-flex align-items-center" id="whoAre">
+    <div class="container">
+      <div class="row align-items-center flex-column-reverse flex-lg-row">
+        <div class="col-lg-7 col-12 item-text">
+          <span class="mx-auto mx-lg-0">{{
+            "whoAre.titleText" | translate
+          }}</span>
+          <p>{{ "whoAre.descriptionText" | translate }}</p>
+          <a
+            href="../assets/pdf-profile/profile.pdf"
+            class="btn d-block mx-auto my-3 m-lg-0"
+          >
+            {{ "whoAre.btnProfile" | translate }}
+          </a>
+        </div>
+        <div class="col-lg-5 col-12 text-center">
+          <img
+            class="mw-100"
+            src="../assets/images/who are/Wavy_F&D-01_Single-01_prev_ui.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end who are us -->
+  <!-- start ourMessage -->
+  <div class="our-message my-5" id="ourMessage">
+    <div class="heading-title">
+      {{ "hedingTitle.titleMessage" | translate }}
+    </div>
+    <div class="container our-content">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card card-eyes">
+            <i class="fa-regular fa-eye"></i>
+            <h2>{{ "ourVision.titleVision" | translate }}</h2>
+            <p>{{ "ourVision.descriptionVision" | translate }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card card-message">
+            <i class="fa-solid fa-comment-dots"></i>
+            <h2>{{ "ourMessage.titleMessage" | translate }}</h2>
+            <p>{{ "ourMessage.descriptionMessage" | translate }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card card-value">
+            <i class="fa-regular fa-gem"></i>
+            <h2>{{ "ourValue.titleValue" | translate }}</h2>
+            <p>{{ "ourValue.descriptionValue" | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end ourMessage -->
+</div>
+<!-- start services -->
+<div class="services my-5 py-5" id="ourservices">
+  <div class="heading-title">
+    {{ "servicses.titlehead" | translate }}
+  </div>
+  <div class="container">
+    <div class="row">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <div
+            class="d-flex flex-lg-row flex-column-reverse"
+            [dir]="'dir' | translate"
+          >
+            <div
+              class="text-item col-12 col-lg-7 flex-column d-flex justify-content-center"
+              [dir]="'dir' | translate"
+            >
+              <h3 class="mb-4">
+                {{ "servicses.titleservice" | translate }}
+              </h3>
+              <p class="subtitle mb-4">
+                {{ "servicses.descriptionservice" | translate }}
+              </p>
+              <div class="row service-content">
+                <div class="col-md-6 mt-3">
+                  <h4 class="">{{ "servicses.service1" | translate }}</h4>
+                  <p>
+                    {{ "servicses.descriptionservice1" | translate }}
+                  </p>
+                </div>
+                <a class="btn mt-4 mx-3" href="#">{{
+                  "servicses.btnservices" | translate
+                }}</a>
+              </div>
+            </div>
+            <div class="img-item col-12 col-lg-5">
+              <img src="../assets/images/machine/service-4.png" alt="" />
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="d-flex flex-column-reverse flex-lg-row"
+            [dir]="'dir' | translate"
+          >
+            <div
+              class="text-item col-12 col-lg-7 flex-column d-flex justify-content-center"
+              [dir]="'dir' | translate"
+            >
+              <h3 class="mb-4">
+                {{ "servicses.titleservice" | translate }}
+              </h3>
+              <p class="subtitle mb-4">
+                {{ "servicses.descriptionservice" | translate }}
+              </p>
+              <div class="row service-content">
+                <div class="col-md-6 mt-3">
+                  <h4 class="">{{ "servicses.service2" | translate }}</h4>
+                  <p>
+                    {{ "servicses.descriptionservice2" | translate }}
+                  </p>
+                </div>
+
+                <a class="btn mt-4 mx-3" href="#">{{
+                  "servicses.btnservices" | translate
+                }}</a>
+              </div>
+            </div>
+            <div class="img-item col-12 col-lg-5">
+              <img src="../assets/images/machine/sevice5.png" alt="" />
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="d-flex flex-column-reverse flex-lg-row"
+            [dir]="'dir' | translate"
+          >
+            <div
+              class="text-item col-12 col-lg-7 flex-column d-flex justify-content-center"
+              [dir]="'dir' | translate"
+            >
+              <h3 class="mb-4">
+                {{ "servicses.titleservice" | translate }}
+              </h3>
+              <p class="subtitle mb-4">
+                {{ "servicses.descriptionservice" | translate }}
+              </p>
+              <div class="row service-content">
+                <div class="col-md-6 mt-3">
+                  <h4 class="">{{ "servicses.service3" | translate }}</h4>
+                  <p>
+                    {{ "servicses.descriptionservice3" | translate }}
+                  </p>
+                </div>
+
+                <a class="btn mt-4 mx-3" href="#">{{
+                  "servicses.btnservices" | translate
+                }}</a>
+              </div>
+            </div>
+            <div class="img-item col-12 col-lg-5">
+              <img src="../assets/images/machine/service-3.png" alt="" />
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="d-flex flex-column-reverse flex-lg-row"
+            [dir]="'dir' | translate"
+          >
+            <div
+              class="text-item col-12 col-lg-7 flex-column d-flex justify-content-center"
+              [dir]="'dir' | translate"
+            >
+              <h3 class="mb-4">
+                {{ "servicses.titleservice" | translate }}
+              </h3>
+              <p class="subtitle mb-4">
+                {{ "servicses.descriptionservice" | translate }}
+              </p>
+              <div class="row service-content">
+                <div class="col-md-6 mt-3">
+                  <h4 class="">{{ "servicses.service4" | translate }}</h4>
+                  <p>
+                    {{ "servicses.descriptionservice4" | translate }}
+                  </p>
+                </div>
+                <a class="btn mt-4 mx-3" href="#">{{
+                  "servicses.btnservices" | translate
+                }}</a>
+              </div>
+            </div>
+            <div class="img-item col-12 col-lg-5">
+              <img src="../assets/images/machine/service-2.png" alt="" />
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
+<!-- end services -->
+<!-- start partener -->
+<div class="partener" id="oursuccessPartners">
+  <div class="heading-title my-5">
+    {{ "SuccessPartners.Partners-title" | translate }}
+  </div>
+  <div class="container my-5">
+    <div class="row">
+      <owl-carousel-o [options]="customOption" class="mt-5">
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img1.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img2.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img3.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img4.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img5.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img6.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img7.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img8.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img9.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img10.png" alt="" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="img-partener">
+            <img src="../assets/images/partner/img11.png" alt="" />
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
+<!-- end partner -->
+
+<div class="layout" [dir]="'dir' | translate">
+  <!-- start contact-us -->
+
+  <div class="contact my-5" id="contact">
+    <div class="heading-title my-5">
+      {{ "contactUs.contact-title" | translate }}
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12">
+          <div class="contact-title">
+            <p>{{ "contactUs.contactDes" | translate }}</p>
+          </div>
+          <form action="javascript:void(0)" (submit)="send()">
+            <div class="forms" [formGroup]="form">
+              <div class="mb-3">
+                <label for="inputName" class="form-label">{{
+                  "contactUs.name" | translate
+                }}</label>
+                <input
+                  formControlName="from_name"
+                  type="text"
+                  id="inputName"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">{{
+                  "contactUs.emailAdd" | translate
+                }}</label>
+                <input
+                  formControlName="from_email"
+                  type="email"
+                  id="email"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">{{
+                  "contactUs.message" | translate
+                }}</label>
+                <textarea
+                  formControlName="message"
+                  class="form-control"
+                  id="message"
+                ></textarea>
+              </div>
+              <div class="submit">
+                <button type="submit" class="btn">
+                  {{ "contactUs.submit" | translate }}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="contact-img">
+            <img
+              src="../assets/images/contact/flat_design_illustration_customer_support_23_2148887720-Z4mXl3i91.png"
+              class="mw-100 w-100"
+              alt=""
+            />
+          </div>
+          <div class="contact-links">
+            <ul class="d-flex flex-wrap">
+              <li class="d-flex flex-column w-50 my-3">
+                <div class="d-flex align-items-center my-3">
+                  <i class="mx-2 fa-solid fa-location-dot fa-fw"></i>
+                  <p class="m-0">{{ "contactUs.location" | translate }}</p>
+                </div>
+                <div>
+                  <a
+                    href="https://maps.app.goo.gl/zAVRsFN6kGGoRcSh9"
+                    class="d-flex align-items-center text-decoration-none"
+                    target="_blank"
+                    ><i class="fa-solid fa-arrow-right border-0"></i>Send Me</a
+                  >
+                </div>
+              </li>
+              <li class="d-flex flex-column w-50 my-3">
+                <div class="d-flex align-items-center my-3">
+                  <i class="mx-2 fa-regular fa-envelope fa-fw"></i>
+                  <p class="m-0">{{ "contactUs.email" | translate }}</p>
+                </div>
+                <div>
+                  <a
+                    href="mailto:Lafatco2023@gmail.com"
+                    class="d-flex align-items-center text-decoration-none"
+                    target="_blank"
+                    ><i class="fa-solid fa-arrow-right border-0"></i>Send Me</a
+                  >
+                </div>
+              </li>
+              <li class="d-flex flex-column w-50 my-3">
+                <div class="d-flex align-items-center my-3">
+                  <i class="mx-2 fa-solid fa-phone-volume fa-fw"></i>
+                  <p class="m-0">{{ "contactUs.phone" | translate }}</p>
+                </div>
+                <div>
+                  <a
+                    href="https://wa.me/+966555116686"
+                    class="d-flex align-items-center text-decoration-none"
+                    target="_blank"
+                    ><i class="fa-solid fa-arrow-right border-0"></i>Send Me</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end contact-us -->
+  <!-- start footer -->
+
+  <footer class="d-flex align-items-center py-3 py-sm-0">
+    <div class="container">
+      <div class="copyRight">
+        <p class="m-0">{{ "footer.copyRight" | translate }}</p>
+        <ul class="d-flex align-items-center">
+          <li>
+            <a href=""><i class="fa-brands fa-instagram fa-fw"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-twitter fa-fw"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-facebook-f fa-fw"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end footer -->
+</div>
+<!-- start loader -->
+
+<ngx-spinner
+  bdColor="rgb(255,255,255)"
+  size="large"
+  color="#e73c7e"
+  type="ball-fussion"
+  template="<img src='../assets/images/loader/Ellipsis-1s-200px.gif' />"
+></ngx-spinner>
+
+<!-- end loader -->
+
+<!-- start scroll to top -->
+<button
+  ngxScrollTop
+  [ngxScrollTopMode]="'classic'"
+  class="my-custom-style"
+  color="primary"
+  mat-mini-fab
+>
+  <i class="fa fa-arrow-up fa-xl"></i>
+</button>
+<!--end scroll to top -->
